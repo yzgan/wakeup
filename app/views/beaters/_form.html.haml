@@ -1,0 +1,20 @@
+= form_with(model: beater, local: true) do |form|
+  - if beater.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(beater.errors.count, "error")
+        prohibited this beater from being saved:
+      %ul
+        - beater.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :provider
+    = form.select :provider, options_for_select(Beater.providers.keys)
+  .field
+    = form.label :url
+    = form.text_field :url
+  .actions
+    = form.submit

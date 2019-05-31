@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @beater.name
+%p
+  %strong Provider:
+  = @beater.provider
+%p
+  %strong Url:
+  = @beater.url
+= link_to 'Edit', edit_beater_path(@beater)
+|
+= link_to 'Back', beaters_path
