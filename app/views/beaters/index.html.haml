@@ -1,4 +1,3 @@
-%p#notice= notice
 %h1 Beaters
 %table.table
   %thead.thead-dark
@@ -10,7 +9,7 @@
       %th{:colspan => "3"}
   %tbody
     - @beaters.each do |beater|
-      %tr
+      %tr{id: "beater-#{beater.id}"}
         %td= beater.name
         %td= beater.provider
         %td= beater.url

@@ -5,7 +5,7 @@ class BeatersController < ApplicationController
   # GET /beaters
   # GET /beaters.json
   def index
-    @beaters = Beater.all
+    @beaters = current_user.beaters
   end
 
   # GET /beaters/1
@@ -15,7 +15,7 @@ class BeatersController < ApplicationController
 
   # GET /beaters/new
   def new
-    @beater = Beater.new
+    @beater = current_user.beaters.new
   end
 
   # GET /beaters/1/edit
@@ -25,7 +25,7 @@ class BeatersController < ApplicationController
   # POST /beaters
   # POST /beaters.json
   def create
-    @beater = Beater.new(beater_params)
+    @beater = current_user.beaters.new(beater_params)
     respond_to do |format|
       if @beater.save
         format.html { redirect_to @beater, notice: 'Beater was successfully created.' }
@@ -64,7 +64,7 @@ class BeatersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_beater
-      @beater = Beater.find(params[:id])
+      @beater = current_user.beaters.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

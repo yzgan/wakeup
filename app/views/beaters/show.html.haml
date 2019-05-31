@@ -8,6 +8,9 @@
 %p
   %strong Url:
   = @beater.url
+%p
+  %strong User:
+  = @beater.user.email
 = link_to 'Edit', edit_beater_path(@beater)
 |
 = link_to 'Back', beaters_path
