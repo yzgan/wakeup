@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: 'admin@beater.com', password: 'beater', password_confirmation: 'beater')
+
+Beater.create(name: 'Malaysia News', provider: :heroku, url: 'https://aqueous-coast-36800.herokuapp.com')
