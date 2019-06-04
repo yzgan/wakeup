@@ -11,6 +11,7 @@ class Beater < ApplicationRecord
   
   validates :status, presence: true
   validates_format_of :url, with: URI::regexp(%w(http https))
+  validates :url, uniqueness: true, presence: true
 
   after_update_commit :update_client_status, if: :saved_change_to_status?
 
