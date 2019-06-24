@@ -1,6 +1,6 @@
 .row.my-2
   - if current_user
-    .col-10.text-right.pt-2
+    .col-sm-10.text-right.pt-2
       %p Hello, #{current_user.email}
-    .col-2
+    .col-sm-2.text-right
       = button_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger'

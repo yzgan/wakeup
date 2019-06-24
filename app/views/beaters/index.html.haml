@@ -1,23 +1,24 @@
 %h1 Beaters
-%table.table
-  %thead.thead-dark
-    %tr
-      %th Name
-      %th Provider
-      %th Url
-      %th Status
-      %th{:colspan => "3"}
-  %tbody
-    - @beaters.each do |beater|
-      %tr{id: "beater-#{beater.id}"}
-        %td= beater.name
-        %td= beater.provider
-        %td= beater.url
-        %td
-          .btn{ class: "btn-#{beater.status == 'online' ? 'success' : 'danger'}" }
-            = beater.status
-        %td= link_to 'Show', beater
-        %td= link_to 'Edit', edit_beater_path(beater)
-        %td= link_to 'Destroy', beater, method: :delete, data: { confirm: 'Are you sure?' }
+.table-responsive
+  %table.table
+    %thead.thead-dark
+      %tr
+        %th Name
+        %th Provider
+        %th Url
+        %th Status
+        %th{:colspan => "3"}
+    %tbody
+      - @beaters.each do |beater|
+        %tr{id: "beater-#{beater.id}"}
+          %td= beater.name
+          %td= beater.provider
+          %td= beater.url
+          %td
+            .btn{ class: "btn-#{beater.status == 'online' ? 'success' : 'danger'}" }
+              = beater.status
+          %td= link_to 'Show', beater
+          %td= link_to 'Edit', edit_beater_path(beater)
+          %td= link_to 'Destroy', beater, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New Beater', new_beater_path
