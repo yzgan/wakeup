@@ -21,6 +21,9 @@ Rails.application.configure do
     #   headers: { "X-Resource-Header" => "A resource" }
     #
     # anonymous glob exposes `paths` variable for interpolation
-    # match "/*/serviceworker.js" => "%{paths}/serviceworker.js"
+    match "/*/serviceworker.js" => "%{paths}/serviceworker.js"
+
+    # # maps to serviceworker "pack" compiled by Webpacker
+    # match "/webpack-serviceworker.js" => "serviceworker.js", pack: true
   end
 end
